@@ -14,8 +14,10 @@
 {% if current_user.role == "admin" %}
 
     <div class="card">
-        <div class="icon"><i class="bi bi-file-earmark-plus"></i></div>
-        <h3>Create Exam</h3>
+        <div class="card-header-row">
+            <div class="icon"><i class="bi bi-file-earmark-plus"></i></div>
+            <h3>Create Exam</h3>
+        </div>
         <p>Create a new examination and add questions.</p>
 
         <a href="{{ url_for('create_exam') }}" class="btn">
@@ -24,8 +26,10 @@
     </div>
 
     <div class="card">
-        <div class="icon"><i class="bi bi-journal-check"></i></div>
-        <h3>Published Exams</h3>
+        <div class="card-header-row">
+            <div class="icon"><i class="bi bi-journal-check"></i></div>
+            <h3>Published Exams</h3>
+        </div>
         <p>View and manage all published exams.</p>
 
         <a href="{{ url_for('exam_list') }}" class="btn">
@@ -34,8 +38,10 @@
     </div>
 
     <div class="card">
-        <div class="icon"><i class="bi bi-bar-chart-line"></i></div>
-        <h3>Manage Exams</h3>
+        <div class="card-header-row">
+            <div class="icon"><i class="bi bi-bar-chart-line"></i></div>
+            <h3>Manage Exams</h3>
+        </div>
         <p>Edit questions and see student results for each exam.</p>
 
         <a href="{{ url_for('manage_exams') }}" class="btn">
@@ -46,8 +52,10 @@
 {% else %}
 
     <div class="card">
-        <div class="icon"><i class="bi bi-key"></i></div>
-        <h3>Join Exam</h3>
+        <div class="card-header-row">
+            <div class="icon"><i class="bi bi-key"></i></div>
+            <h3>Join Exam</h3>
+        </div>
         <p>Enter the code your teacher gave you to start an exam.</p>
 
         <a href="{{ url_for('join_exam') }}" class="btn">
@@ -56,8 +64,10 @@
     </div>
 
     <div class="card">
-        <div class="icon"><i class="bi bi-clock-history"></i></div>
-        <h3>My History</h3>
+        <div class="card-header-row">
+            <div class="icon"><i class="bi bi-clock-history"></i></div>
+            <h3>My History</h3>
+        </div>
         <p>See your past attempts and scores.</p>
 
         <a href="{{ url_for('history') }}" class="btn">
