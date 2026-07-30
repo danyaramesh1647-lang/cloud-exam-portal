@@ -262,8 +262,14 @@ table tbody tr:last-child td{
 
 @media (max-width: 576px){
     .navbar .container{
-        flex-wrap: wrap;
+        flex-wrap: wrap !important;
         row-gap: 8px;
+    }
+
+    .navbar .container > div.d-flex{
+        flex-wrap: wrap !important;
+        width: 100%;
+        justify-content: flex-end;
     }
 
     .navbar-brand{
