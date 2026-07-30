@@ -22,17 +22,17 @@
         <tbody>
         {% for r in results %}
             <tr>
-                <td>{{ r.submission.exam.title }}</td>
-                <td>{{ r.submission.score }} / {{ r.total }}</td>
-                <td>
+                <td data-label="Exam">{{ r.submission.exam.title }}</td>
+                <td data-label="Score">{{ r.submission.score }} / {{ r.total }}</td>
+                <td data-label="Percentage">
                     {% if r.percentage >= 50 %}
                         <span class="badge-status badge-published">{{ r.percentage }}%</span>
                     {% else %}
                         <span class="badge-status badge-draft">{{ r.percentage }}%</span>
                     {% endif %}
                 </td>
-                <td>{{ r.submission.submitted_at.strftime('%d %b %Y, %I:%M %p') }}</td>
-                <td>
+                <td data-label="Date">{{ r.submission.submitted_at.strftime('%d %b %Y, %I:%M %p') }}</td>
+                <td data-label="Actions">
                     <a href="{{ url_for('result', submission_id=r.submission.id) }}">View</a>
                     &nbsp;•&nbsp;
                     <a href="{{ url_for('delete_submission', submission_id=r.submission.id) }}"

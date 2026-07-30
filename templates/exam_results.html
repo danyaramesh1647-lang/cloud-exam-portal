@@ -25,16 +25,16 @@
         <tbody>
         {% for r in results %}
             <tr>
-                <td>{{ r.submission.student.name }}</td>
-                <td>{{ r.submission.score }} / {{ total_questions }}</td>
-                <td>
+                <td data-label="Student">{{ r.submission.student.name }}</td>
+                <td data-label="Score">{{ r.submission.score }} / {{ total_questions }}</td>
+                <td data-label="Percentage">
                     {% if r.percentage >= 50 %}
                         <span class="badge-status badge-published">{{ r.percentage }}%</span>
                     {% else %}
                         <span class="badge-status badge-draft">{{ r.percentage }}%</span>
                     {% endif %}
                 </td>
-                <td>{{ r.submission.submitted_at.strftime('%d %b %Y, %I:%M %p') }}</td>
+                <td data-label="Submitted">{{ r.submission.submitted_at.strftime('%d %b %Y, %I:%M %p') }}</td>
             </tr>
         {% endfor %}
         </tbody>

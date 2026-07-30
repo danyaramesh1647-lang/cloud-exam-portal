@@ -1,320 +1,5 @@
 /* =======================
    LIGHT MODE FIX
-   (put this section at the very TOP of style.css, not here)
-======================= */
-
-:root {
-    color-scheme: light;
-}
-
-body{
-    background-color: #F9FBF9;
-    color: #2C2C2A;
-}
-
-.card{
-    background-color: #FFFFFF;
-}
-
-input, select, textarea{
-    background-color: #FFFFFF;
-    color: #2C2C2A;
-}
-:root {
-    color-scheme: light;
-}
-
-body{
-    background-color: #F9FBF9;
-    color: #2C2C2A;
-}
-
-.card{
-    background-color: #FFFFFF;
-}
-
-input, select, textarea{
-    background-color: #FFFFFF;
-    color: #2C2C2A;
-}
-body{
-    background-color: #F9FBF9;
-    color: #2C2C2A;
-}
-
-.card{
-    background-color: #FFFFFF;
-}
-/* =======================
-   FORM LABELS
-======================= */
-
-label{
-    display:block;
-    font-weight:500;
-    font-size:14px;
-    color:#48634D;
-    margin-top:14px;
-    margin-bottom:2px;
-}
-
-label:first-of-type{
-    margin-top:0;
-}
-
-/* =======================
-   QUESTION LIST (admin add-question page)
-======================= */
-
-.question-list{
-    list-style:none;
-}
-
-.question-list li{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    padding:12px 0;
-    border-bottom:1px solid #ECECEC;
-}
-
-.question-list li:last-child{
-    border-bottom:none;
-}
-
-.correct-tag{
-    flex-shrink:0;
-    background:#EAF5EB;
-    color:#48634D;
-    font-size:12px;
-    font-weight:600;
-    padding:4px 10px;
-    border-radius:20px;
-    white-space:nowrap;
-}
-
-/* =======================
-   STATUS BADGES
-======================= */
-
-.badge-status{
-    font-size:12px;
-    font-weight:600;
-    padding:5px 14px;
-    border-radius:20px;
-}
-
-.badge-published{
-    background:#DFF3E1;
-    color:#2F7A3C;
-}
-
-.badge-draft{
-    background:#F3EEDF;
-    color:#8A6D1D;
-}
-
-/* =======================
-   EXAM-TAKING PAGE
-======================= */
-
-.question-card{
-    margin-bottom:20px;
-}
-
-.q-number{
-    color:#7DA27E;
-    font-size:13px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    margin-bottom:6px;
-}
-
-.q-text{
-    font-size:19px;
-    margin-bottom:18px;
-}
-
-.option-choice{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 16px;
-    border:1px solid #DDE7DD;
-    border-radius:12px;
-    margin-bottom:10px;
-    cursor:pointer;
-    transition:.2s;
-    font-weight:400;
-}
-
-.option-choice:hover{
-    border-color:#7DA27E;
-    background:#F8FCF8;
-}
-
-.option-choice input[type="radio"]{
-    width:auto;
-    margin:0;
-    accent-color:#7DA27E;
-}
-
-.option-choice:has(input:checked){
-    border-color:#7DA27E;
-    background:#EAF5EB;
-}/* =======================
-   FORM LABELS
-======================= */
-
-label{
-    display:block;
-    font-weight:500;
-    font-size:14px;
-    color:#48634D;
-    margin-top:14px;
-    margin-bottom:2px;
-}
-
-label:first-of-type{
-    margin-top:0;
-}
-
-/* =======================
-   QUESTION LIST (admin add-question page)
-======================= */
-
-.question-list{
-    list-style:none;
-}
-
-.question-list li{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    padding:12px 0;
-    border-bottom:1px solid #ECECEC;
-}
-
-.question-list li:last-child{
-    border-bottom:none;
-}
-
-.correct-tag{
-    flex-shrink:0;
-    background:#EAF5EB;
-    color:#48634D;
-    font-size:12px;
-    font-weight:600;
-    padding:4px 10px;
-    border-radius:20px;
-    white-space:nowrap;
-}
-
-/* =======================
-   STATUS BADGES
-======================= */
-
-.badge-status{
-    font-size:12px;
-    font-weight:600;
-    padding:5px 14px;
-    border-radius:20px;
-}
-
-.badge-published{
-    background:#DFF3E1;
-    color:#2F7A3C;
-}
-
-.badge-draft{
-    background:#F3EEDF;
-    color:#8A6D1D;
-}
-
-/* =======================
-   EXAM-TAKING PAGE
-======================= */
-
-.question-card{
-    margin-bottom:20px;
-}
-
-.q-number{
-    color:#7DA27E;
-    font-size:13px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    margin-bottom:6px;
-}
-
-.q-text{
-    font-size:19px;
-    margin-bottom:18px;
-}
-
-.option-choice{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 16px;
-    border:1px solid #DDE7DD;
-    border-radius:12px;
-    margin-bottom:10px;
-    cursor:pointer;
-    transition:.2s;
-    font-weight:400;
-}
-
-.option-choice:hover{
-    border-color:#7DA27E;
-    background:#F8FCF8;
-}
-
-.option-choice input[type="radio"]{
-    width:auto;
-    margin:0;
-    accent-color:#7DA27E;
-}
-
-.option-choice:has(input:checked){
-    border-color:#7DA27E;
-    background:#EAF5EB;
-}
-/* =======================
-   AUTH PAGES (login/register)
-======================= */
-
-.auth-card{
-    width: 420px;
-    max-width: 100%;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-.auth-logo{
-    font-size: 42px;
-    color: #7DA27E;
-    margin-bottom: 10px;
-}
-
-.btn-success{
-    background-color: #48634D;
-    border-color: #48634D;
-    border-radius: 10px;
-}
-
-.btn-success:hover{
-    background-color: #3a5140;
-    border-color: #3a5140;
-}
-/* =======================
-   LIGHT MODE FIX
-   (this section goes at the very TOP of style.css, not the bottom)
 ======================= */
 
 :root {
@@ -335,242 +20,6 @@ input, select, textarea{
     color: #2C2C2A;
 }
 
-/* =======================
-   AUTH PAGES (login/register)
-======================= */
-
-.auth-card{
-    width: 420px;
-    max-width: 100%;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-.auth-logo{
-    font-size: 42px;
-    color: #7DA27E;
-    margin-bottom: 10px;
-}
-
-.btn-success{
-    background-color: #48634D;
-    border-color: #48634D;
-    border-radius: 10px;
-}
-
-.btn-success:hover{
-    background-color: #3a5140;
-    border-color: #3a5140;
-}
-
-/* =======================
-   FORM LABELS
-======================= */
-
-label{
-    display:block;
-    font-weight:500;
-    font-size:14px;
-    color:#48634D;
-    margin-top:14px;
-    margin-bottom:2px;
-}
-
-label:first-of-type{
-    margin-top:0;
-}
-
-/* =======================
-   QUESTION LIST (admin add-question page)
-======================= */
-
-.question-list{
-    list-style:none;
-    padding-left:0;
-}
-
-.question-list li{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    padding:12px 0;
-    border-bottom:1px solid #ECECEC;
-}
-
-.question-list li:last-child{
-    border-bottom:none;
-}
-
-.correct-tag{
-    flex-shrink:0;
-    background:#EAF5EB;
-    color:#48634D;
-    font-size:12px;
-    font-weight:600;
-    padding:4px 10px;
-    border-radius:20px;
-    white-space:nowrap;
-}
-
-/* =======================
-   STATUS BADGES
-======================= */
-
-.badge-status{
-    display:inline-block;
-    font-size:12px;
-    font-weight:600;
-    padding:5px 14px;
-    border-radius:20px;
-}
-
-.badge-published{
-    background:#DFF3E1;
-    color:#2F7A3C;
-}
-
-.badge-draft{
-    background:#F3EEDF;
-    color:#8A6D1D;
-}
-
-/* =======================
-   EXAM-TAKING PAGE
-======================= */
-
-.question-card{
-    margin-bottom:20px;
-}
-
-.q-number{
-    color:#7DA27E;
-    font-size:13px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    margin-bottom:6px;
-}
-
-.q-text{
-    font-size:19px;
-    margin-bottom:18px;
-}
-
-.option-choice{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 16px;
-    border:1px solid #DDE7DD;
-    border-radius:12px;
-    margin-bottom:10px;
-    cursor:pointer;
-    transition:.2s;
-    font-weight:400;
-}
-
-.option-choice:hover{
-    border-color:#7DA27E;
-    background:#F8FCF8;
-}
-
-.option-choice input[type="radio"]{
-    width:auto;
-    margin:0;
-    accent-color:#7DA27E;
-}
-
-.option-choice:has(input:checked){
-    border-color:#7DA27E;
-    background:#EAF5EB;
-}
-
-/* =======================
-   RESULT PAGE (score circle)
-======================= */
-
-.result-icon{
-    font-size:48px;
-    margin-bottom:8px;
-}
-
-.score-circle{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    background:#EAF5EB;
-    border:6px solid #7DA27E;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:10px 0;
-}
-
-.score-percent{
-    font-size:28px;
-    font-weight:700;
-    color:#48634D;
-}
-
-.score-fraction{
-    color:#6b6b68;
-    font-size:15px;
-}
-
-/* =======================
-   TABLES (history / exam results)
-======================= */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-table thead th{
-    text-align:left;
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    color:#7DA27E;
-    padding:14px 18px;
-    border-bottom:2px solid #ECECEC;
-}
-
-table tbody td{
-    padding:14px 18px;
-    border-bottom:1px solid #ECECEC;
-    font-size:15px;
-}
-
-table tbody tr:last-child td{
-    border-bottom:none;
-}
-
-/* =======================
-   RESPONSIVE (mobile) TWEAKS
-======================= */
-
-@media (max-width: 576px){
-
-    .auth-card{
-        padding:1.25rem !important;
-    }
-
-    .q-text{
-        font-size:17px;
-    }
-
-    table{
-        font-size:13px;
-    }
-
-    table thead th,
-    table tbody td{
-        padding:10px 8px;
-    }
-}
 /* =======================
    AUTH PAGES (login/register/join)
 ======================= */
@@ -805,5 +254,151 @@ table tbody tr:last-child td{
     table thead th,
     table tbody td{
         padding:10px 8px;
+    }
+}
+/* =======================
+   NAVBAR MOBILE FIX
+======================= */
+
+@media (max-width: 576px){
+    .navbar .container{
+        flex-wrap: wrap !important;
+        row-gap: 8px;
+    }
+
+    .navbar .container > div.d-flex{
+        flex-wrap: wrap !important;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .navbar-brand{
+        font-size: 16px;
+    }
+}
+/* =======================
+   NAVBAR BACKGROUND FIX
+======================= */
+
+.navbar{
+    background-color: #48634D;
+}
+/* =======================
+   TYPOGRAPHY
+======================= */
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =======================
+   TABLE MOBILE FIX
+======================= */
+
+@media (max-width: 576px){
+
+    table thead{
+        display: none;
+    }
+
+    table, table tbody, table tr, table td{
+        display: block;
+        width: 100%;
+    }
+
+    table tr{
+        border-bottom: 2px solid #ECECEC;
+        padding: 10px 0;
+    }
+
+    table td{
+        border-bottom: none;
+        padding: 4px 18px;
+    }
+
+    table td::before{
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #7DA27E;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+}
+/* =======================
+   PROFESSIONAL STYLING PASS
+======================= */
+
+.icon{
+    font-size: 26px;
+    color: #48634D;
+    margin-bottom: 10px;
+}
+
+.card{
+    border-radius: 10px !important;
+}
+
+.btn, .btn-success{
+    border-radius: 8px !important;
+}
+
+.badge-status{
+    border-radius: 6px !important;
+}
+
+.auth-card{
+    border-radius: 12px !important;
+}
+/* =======================
+   CARD DEFINITION (make boxes visible against page bg)
+======================= */
+
+.card{
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border: 1px solid #EAEAE4;
+}
+
+/* =======================
+   DASHBOARD: icon beside title, not above
+======================= */
+
+.card-grid .card-header-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.card-grid .icon{
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+.card-grid h3{
+    margin-bottom: 0;
+}
+
+/* =======================
+   MOBILE: history rows visually separated, result card has breathing room
+======================= */
+
+@media (max-width: 576px){
+
+    table tbody tr{
+        background-color: #FCFCFA;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    table tbody tr:nth-child(even){
+        background-color: #F3F6F3;
+    }
+
+    .row.justify-content-center .card{
+        margin-left: 8px;
+        margin-right: 8px;
     }
 }
