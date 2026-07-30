@@ -256,3 +256,17 @@ table tbody tr:last-child td{
         padding:10px 8px;
     }
 }
+/* =======================
+   NAVBAR MOBILE FIX
+======================= */
+
+@media (max-width: 576px){
+    .navbar .container{
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .navbar-brand{
+        font-size: 16px;
+    }
+}
