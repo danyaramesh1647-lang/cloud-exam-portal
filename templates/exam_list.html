@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+Available Exams
+{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">
+    Available Exams
+</h1>
+
+{% if exams %}
+
+<div class="row">
+
+{% for exam in exams %}
+
+<div class="col-md-6 mb-4">
+
+<div class="card">
+
+<h3>{{ exam.title }}</h3>
+
+<p>
+<i class="bi bi-clock"></i>
+{{ exam.duration_minutes }} Minutes
+</p>
+
+<a href="{{ url_for('take_exam', exam_id=exam.id) }}"
+class="btn">
+
+Start Exam
+
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% else %}
+
+<div class="card">
+
+No exams available.
+
+</div>
+
+{% endif %}
+
+{% endblock %}

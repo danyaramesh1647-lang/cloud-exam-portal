@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<h1>👋 Welcome, {{ current_user.name }}</h1>
+<p class="subtitle">
+    Glad to see you back! Choose an option below.
+</p>
+
+<div class="card-grid">
+
+{% if current_user.role == "admin" %}
+
+    <div class="card">
+        <div class="icon">📝</div>
+        <h3>Create Exam</h3>
+        <p>Create a new examination and add questions.</p>
+
+        <a href="{{ url_for('create_exam') }}" class="btn">
+            Create Now
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="icon">📚</div>
+        <h3>Published Exams</h3>
+        <p>View and manage all published exams.</p>
+
+        <a href="{{ url_for('exam_list') }}" class="btn">
+            View Exams
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="icon">📊</div>
+        <h3>Manage Exams</h3>
+        <p>Edit questions and see student results for each exam.</p>
+
+        <a href="{{ url_for('manage_exams') }}" class="btn">
+            Manage
+        </a>
+    </div>
+
+{% else %}
+
+    <div class="card">
+        <div class="icon">🔑</div>
+        <h3>Join Exam</h3>
+        <p>Enter the code your teacher gave you to start an exam.</p>
+
+        <a href="{{ url_for('join_exam') }}" class="btn">
+            Enter Code
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="icon">📈</div>
+        <h3>My History</h3>
+        <p>See your past attempts and scores.</p>
+
+        <a href="{{ url_for('history') }}" class="btn">
+            View History
+        </a>
+    </div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

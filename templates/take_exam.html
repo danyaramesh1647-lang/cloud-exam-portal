@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}{{ exam.title }} | Cloud Exam Portal{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+<div class="col-md-9 col-lg-8">
+
+<div class="card mb-4">
+    <h1 class="mb-1" style="font-size:26px;">{{ exam.title }}</h1>
+    <p class="subtitle" style="margin-bottom:0;">
+        <i class="bi bi-clock"></i>
+        Duration: {{ exam.duration_minutes }} minutes &nbsp;•&nbsp;
+        {{ questions|length }} Questions
+    </p>
+    <p class="mt-2 mb-0">
+        <strong>Time remaining:</strong>
+        <span id="timer" style="font-size:20px; color:#48634D;"></span>
+    </p>
+</div>
+
+<form method="POST" id="examForm">
+
+{% for question in questions %}
+
+<div class="card question-card">
+
+    <p class="q-number">Question {{ loop.index }} of {{ questions|length }}</p>
+    <h3 class="q-text">{{ question.question_text }}</h3>
+
+    <label class="option-choice">
+        <input type="radio" name="question_{{ question.id }}" value="A" required>
+        <span>{{ question.option_a }}</span>
+    </label>
+
+    <label class="option-choice">
+        <input type="radio" name="question_{{ question.id }}" value="B">
+        <span>{{ question.option_b }}</span>
+    </label>
+
+    <label class="option-choice">
+        <input type="radio" name="question_{{ question.id }}" value="C">
+        <span>{{ question.option_c }}</span>
+    </label>
+
+    <label class="option-choice">
+        <input type="radio" name="question_{{ question.id }}" value="D">
+        <span>{{ question.option_d }}</span>
+    </label>
+
+</div>
+
+{% endfor %}
+
+<div class="d-grid mb-5">
+    <button type="submit" class="btn" style="border:none; font-size:16px; padding:16px;">
+        Submit Exam
+    </button>
+</div>
+
+</form>
+
+<script>
+    let remaining = {{ remaining_seconds }};
+    const timerEl = document.getElementById('timer');
+
+    function updateTimer() {
+        const minutes = Math.floor(remaining / 60);
+        const seconds = remaining % 60;
+        timerEl.textContent = minutes + 'm ' + String(seconds).padStart(2, '0') + 's';
+
+        if (remaining <= 0) {
+            document.getElementById('examForm').submit();
+            return;
+        }
+
+        remaining--;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</div>
+</div>
+
+{% endblock %}

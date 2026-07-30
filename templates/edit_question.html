@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Question | Cloud Exam Portal{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+<div class="col-md-8 col-lg-7">
+
+<div class="card">
+
+    <h1 class="mb-1" style="font-size:26px;">Edit Question</h1>
+    <p class="subtitle" style="margin-bottom:20px;">
+        Part of: {{ exam.title }}
+    </p>
+
+    <form method="POST">
+
+        <label>Question</label>
+        <textarea name="question_text" rows="4" class="form-control" required>{{ question.question_text }}</textarea>
+
+        <label>Option A</label>
+        <input type="text" name="option_a" class="form-control" value="{{ question.option_a }}" required>
+
+        <label>Option B</label>
+        <input type="text" name="option_b" class="form-control" value="{{ question.option_b }}" required>
+
+        <label>Option C</label>
+        <input type="text" name="option_c" class="form-control" value="{{ question.option_c }}" required>
+
+        <label>Option D</label>
+        <input type="text" name="option_d" class="form-control" value="{{ question.option_d }}" required>
+
+        <label>Correct Option</label>
+        <select name="correct_option" class="form-select">
+            <option value="A" {% if question.correct_option == 'A' %}selected{% endif %}>A</option>
+            <option value="B" {% if question.correct_option == 'B' %}selected{% endif %}>B</option>
+            <option value="C" {% if question.correct_option == 'C' %}selected{% endif %}>C</option>
+            <option value="D" {% if question.correct_option == 'D' %}selected{% endif %}>D</option>
+        </select>
+
+        <div class="d-grid mt-3">
+            <button type="submit" class="btn" style="border:none; font-size:16px;">
+                Save Changes
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+<p class="text-center">
+    <a href="{{ url_for('add_question', exam_id=exam.id) }}">&larr; Back to Questions</a>
+</p>
+
+</div>
+</div>
+
+{% endblock %}

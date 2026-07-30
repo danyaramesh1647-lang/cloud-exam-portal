@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Add Questions | Cloud Exam Portal{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+<div class="col-md-8 col-lg-7">
+
+<div class="card">
+
+    <h1 class="mb-1" style="font-size:26px;">{{ exam.title }}</h1>
+    <p class="subtitle" style="margin-bottom:20px;">
+        Add multiple-choice questions below, then publish when you're ready.
+    </p>
+
+    <form method="POST">
+
+        <label>Question</label>
+        <textarea name="question_text" rows="4" class="form-control" placeholder="Type the question here" required></textarea>
+
+        <label>Option A</label>
+        <input type="text" name="option_a" class="form-control" placeholder="Option A" required>
+
+        <label>Option B</label>
+        <input type="text" name="option_b" class="form-control" placeholder="Option B" required>
+
+        <label>Option C</label>
+        <input type="text" name="option_c" class="form-control" placeholder="Option C" required>
+
+        <label>Option D</label>
+        <input type="text" name="option_d" class="form-control" placeholder="Option D" required>
+
+        <label>Correct Option</label>
+        <select name="correct_option" class="form-select">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+
+        <div class="d-grid mt-3">
+            <button type="submit" class="btn" style="border:none; font-size:16px;">
+                + Add Question
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+<div class="card">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 style="font-size:20px; margin-bottom:0;">
+            Questions added ({{ exam.questions|length }})
+        </h2>
+
+        {% if exam.is_published %}
+            <span class="badge-status badge-published">Published</span>
+        {% else %}
+            <span class="badge-status badge-draft">Draft</span>
+        {% endif %}
+    </div>
+
+    {% if exam.questions %}
+        <ul class="question-list">
+        {% for q in exam.questions %}
+            <li>
+                <span>{{ loop.index }}. {{ q.question_text }}</span>
+                <span>
+                    <span class="correct-tag">Correct: {{ q.correct_option }}</span>
+                    <a href="{{ url_for('edit_question', question_id=q.id) }}" class="ms-2">Edit</a>
+                </span>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-muted mb-0">No questions added yet.</p>
+    {% endif %}
+
+    {% if not exam.is_published %}
+        <div class="d-grid mt-3">
+            <a href="{{ url_for('publish_exam', exam_id=exam.id) }}" class="btn" style="text-align:center;">
+                Publish this Exam
+            </a>
+        </div>
+    {% endif %}
+
+</div>
+
+<p class="text-center">
+    <a href="{{ url_for('dashboard') }}">&larr; Done — Back to Dashboard</a>
+</p>
+
+</div>
+</div>
+
+{% endblock %}

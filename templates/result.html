@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Result | Cloud Exam Portal{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+<div class="col-md-7 col-lg-6">
+
+<div class="card text-center">
+
+    {% if passed %}
+        <div class="result-icon">🎉</div>
+        <span class="badge-status badge-published mx-auto mb-3">Passed</span>
+    {% else %}
+        <div class="result-icon">📘</div>
+        <span class="badge-status badge-draft mx-auto mb-3">Not Passed</span>
+    {% endif %}
+
+    <h1 class="mb-1" style="font-size:28px;">{{ submission.exam.title }}</h1>
+    <p class="subtitle" style="margin-bottom:25px;">Here's how you did.</p>
+
+    <div class="score-circle mx-auto">
+        <span class="score-percent">{{ percentage }}%</span>
+    </div>
+
+    <p class="score-fraction">
+        {{ submission.score }} / {{ total_questions }} correct
+    </p>
+
+    <div class="d-grid mt-4">
+        <a href="{{ url_for('exam_list') }}" class="btn" style="text-align:center;">
+            Back to Exams
+        </a>
+    </div>
+
+    <p class="text-center mt-3 mb-0">
+        <a href="{{ url_for('history') }}">View my exam history</a>
+    </p>
+
+</div>
+
+</div>
+</div>
+
+{% endblock %}

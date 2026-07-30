@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Create Exam | Cloud Exam Portal{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+<div class="col-md-7 col-lg-6">
+
+<div class="card">
+
+    <h1 class="mb-1" style="font-size:28px;">Create a new exam</h1>
+    <p class="subtitle" style="margin-bottom:20px;">
+        Give it a title and duration — you'll add questions next.
+    </p>
+
+    <form method="POST">
+
+        <label>Exam Title</label>
+        <input type="text" name="title" class="form-control" placeholder="e.g. Data Structures Midterm" required>
+
+        <label>Duration (minutes)</label>
+        <input type="number" name="duration" class="form-control" placeholder="e.g. 30" min="1" required>
+
+        <div class="d-grid mt-3">
+            <button type="submit" class="btn" style="border:none; font-size:16px;">
+                Create Exam
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+<p class="text-center mt-3">
+    <a href="{{ url_for('dashboard') }}">&larr; Back to Dashboard</a>
+</p>
+
+</div>
+</div>
+
+{% endblock %}

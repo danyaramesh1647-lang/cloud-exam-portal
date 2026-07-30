@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Exam History | Cloud Exam Portal{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Exam History</h1>
+
+{% if results %}
+
+<div class="card p-0">
+    <table>
+        <thead>
+            <tr>
+                <th>Exam</th>
+                <th>Score</th>
+                <th>Percentage</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in results %}
+            <tr>
+                <td>{{ r.submission.exam.title }}</td>
+                <td>{{ r.submission.score }} / {{ r.total }}</td>
+                <td>
+                    {% if r.percentage >= 50 %}
+                        <span class="badge-status badge-published">{{ r.percentage }}%</span>
+                    {% else %}
+                        <span class="badge-status badge-draft">{{ r.percentage }}%</span>
+                    {% endif %}
+                </td>
+                <td>{{ r.submission.submitted_at.strftime('%d %b %Y, %I:%M %p') }}</td>
+                <td>
+                    <a href="{{ url_for('result', submission_id=r.submission.id) }}">View</a>
+                    &nbsp;•&nbsp;
+                    <a href="{{ url_for('delete_submission', submission_id=r.submission.id) }}"
+                       style="color:#C0392B;"
+                       onclick="return confirm('Delete this attempt from your history? This cannot be undone.');">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% else %}
+
+<div class="card">
+    You haven't taken any exams yet.
+</div>
+
+{% endif %}
+
+<p class="mt-3">
+    <a href="{{ url_for('dashboard') }}">&larr; Back to Dashboard</a>
+</p>
+
+{% endblock %}
