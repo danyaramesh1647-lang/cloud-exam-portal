@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<h1>👋 Welcome, {{ current_user.name }}</h1>
-<p class="subtitle">
-    Glad to see you back! Choose an option below.
+<h1 class="mb-1">Dashboard</h1>
+<p class="subtitle" style="margin-bottom:25px;">
+    {{ current_user.name }} — {{ current_user.role|capitalize }}
 </p>
 
 <div class="card-grid">
@@ -14,7 +14,7 @@
 {% if current_user.role == "admin" %}
 
     <div class="card">
-        <div class="icon">📝</div>
+        <div class="icon"><i class="bi bi-file-earmark-plus"></i></div>
         <h3>Create Exam</h3>
         <p>Create a new examination and add questions.</p>
 
@@ -24,7 +24,7 @@
     </div>
 
     <div class="card">
-        <div class="icon">📚</div>
+        <div class="icon"><i class="bi bi-journal-check"></i></div>
         <h3>Published Exams</h3>
         <p>View and manage all published exams.</p>
 
@@ -34,7 +34,7 @@
     </div>
 
     <div class="card">
-        <div class="icon">📊</div>
+        <div class="icon"><i class="bi bi-bar-chart-line"></i></div>
         <h3>Manage Exams</h3>
         <p>Edit questions and see student results for each exam.</p>
 
@@ -46,7 +46,7 @@
 {% else %}
 
     <div class="card">
-        <div class="icon">🔑</div>
+        <div class="icon"><i class="bi bi-key"></i></div>
         <h3>Join Exam</h3>
         <p>Enter the code your teacher gave you to start an exam.</p>
 
@@ -56,7 +56,7 @@
     </div>
 
     <div class="card">
-        <div class="icon">📈</div>
+        <div class="icon"><i class="bi bi-clock-history"></i></div>
         <h3>My History</h3>
         <p>See your past attempts and scores.</p>
 
