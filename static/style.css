@@ -283,3 +283,46 @@ table tbody tr:last-child td{
 .navbar{
     background-color: #48634D;
 }
+/* =======================
+   TYPOGRAPHY
+======================= */
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =======================
+   TABLE MOBILE FIX
+======================= */
+
+@media (max-width: 576px){
+
+    table thead{
+        display: none;
+    }
+
+    table, table tbody, table tr, table td{
+        display: block;
+        width: 100%;
+    }
+
+    table tr{
+        border-bottom: 2px solid #ECECEC;
+        padding: 10px 0;
+    }
+
+    table td{
+        border-bottom: none;
+        padding: 4px 18px;
+    }
+
+    table td::before{
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #7DA27E;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+}
