@@ -326,3 +326,28 @@ body{
         margin-bottom: 2px;
     }
 }
+/* =======================
+   PROFESSIONAL STYLING PASS
+======================= */
+
+.icon{
+    font-size: 26px;
+    color: #48634D;
+    margin-bottom: 10px;
+}
+
+.card{
+    border-radius: 10px !important;
+}
+
+.btn, .btn-success{
+    border-radius: 8px !important;
+}
+
+.badge-status{
+    border-radius: 6px !important;
+}
+
+.auth-card{
+    border-radius: 12px !important;
+}
